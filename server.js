@@ -14,9 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 endpoints(app);
 
-//  app.use(bodyParser.urlencoded({ extended: true }));
- 
-
   
 
   app.listen(port, () => {

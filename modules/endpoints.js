@@ -44,11 +44,11 @@ module.exports = (app) => {
 
   app.post('/api/shoppingcart', async (request, response) => {
     console.log(request.url);
-    const id = request.query.id;
+    const id = request.body.id;
     
-    const name = request.query.name;
-    const price = request.query.price;
-    const imageUrl = request.query.imageUrl;
+    const name = request.body.name;
+    const price = request.body.price;
+    const imageUrl = request.body.imageUrl;
 
     let message = {
       success: true,
@@ -61,17 +61,17 @@ module.exports = (app) => {
 
     if (productInShoppingcart) {
         console.log(productInShoppingcart);
-      const errorMessage1 = {
+      const errorMessage = {
         error: 'Error',
         message: 'Ooops product is already there, cannot be added'
       };
-      response.send(errorMessage1);
+      response.send(errorMessage);
     } else if (!productInProducts) {
-      const errorMessage2 = {
+      const errorMessage = {
         error: 'Error',
         message: 'Ooops product is not in the product list, cannot be added.'
       };
-      response.send(errorMessage2);
+      response.send(errorMessage);
     } else {
       const res = database.addProductToShoppingcart(id, name, price, imageUrl); 
       message.data = res[0];
@@ -83,10 +83,10 @@ module.exports = (app) => {
 
   app.delete('/api/shoppingcart', async (request, response) => {
     console.log(request.url);
-    const id = request.query.id;
-    const name = request.query.name;
-    const price = request.query.price;
-    const imageUrl = request.query.imageUrl;
+    const id = request.body.id;
+    const name = request.body.name;
+    const price = request.body.price;
+    const imageUrl = request.body.imageUrl;
 
     let message = {
       success: true,
