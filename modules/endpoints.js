@@ -5,11 +5,11 @@ module.exports = (app) => {
 
     app.post('/api/product', async (request, response) => {
         console.log(request.url);
-        const id = request.query.id;
+        const id = request.body.id;
         console.log(id);
-        const name = request.query.name;
-        const price = request.query.price;
-        const imageUrl = request.query.imageUrl;
+        const name = request.body.name;
+        const price = request.body.price;
+        const imageUrl = request.body.imageUrl;
 
         let message = {
             success: true,
