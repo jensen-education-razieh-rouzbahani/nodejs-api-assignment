@@ -1,0 +1,18 @@
+Code review:
+
+repository: https://github.com/jenseneducation-madoka-fujimaki-ahlsen/nodejs-the-one-where-we-build-an-API-assignment-1
+Project: Nodejs-api-assignment-1
+Project owner: Madoka fujimaki ahlsen
+Reviewer: Razieh Rouzbahani
+
+Three good points:
+
+1. The code is well structured and divided into different files and modules so
+that it can be easily used in other tasks and have less code in each file.
+
+For example, There is a module/file which includes a class for error handling
+
+2. It is easy to read and understand the code and also it has good comments, and choosing 
+proper names for variables and functions.
+
+3. It has all the functionalities that are necessary for this assignment
